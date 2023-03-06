@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  flink-template:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-03-06T23:43:30.066197+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 2edaa4e6cac364ca3f83b9acf5447fbbe491a37740bd7d8b9056ae7fe8956d39
+    name: flink-template
+    type: application
+    urls:
+    - https://w564791.github.io/helm-chart/flink-template-0.1.0.tgz
+    version: 0.1.0
   template:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-03-05T16:15:33.185266+08:00"
+    created: "2023-03-06T23:43:30.067086+08:00"
     description: A Helm chart for Kubernetes
     digest: 7bd8e632f594cdb78b11bfe77ec59dc1c5ab40dbc1f56e2514c5ca9308df8a7d
     name: template
@@ -11,4 +22,4 @@ entries:
     urls:
     - https://w564791.github.io/helm-chart/template-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-05T16:15:33.184715+08:00"
+generated: "2023-03-06T23:43:30.065584+08:00"

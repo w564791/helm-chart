@@ -1,0 +1,22 @@
+apiVersion: flink.apache.org/v1beta1
+kind: FlinkDeployment
+metadata:
+  name: "{{.Release.Name}}"
+spec:
+  image: "{{- .Values.image.repository}}:{{ .Values.image.tag }}"
+  flinkVersion: "{{- include "template.flinkVersion" . -}}"
+  flinkConfiguration:
+    {{- include "template.flinkConfiguration.taskmanager" .| nindent 4}}
+  serviceAccount: {{ include "template.serviceAccountName" . }}
+  jobManager:
+    resource:
+      memory: "2048m"
+      cpu: 1
+  taskManager:
+    resource:
+      memory: "2048m"
+      cpu: 1
+  job:
+    jarURI: {{ .Values.job.jarURI}}
+    parallelism: {{ .Values.job.parallelism}}
+    upgradeMode: {{ .Values.job.upgradeMode}}

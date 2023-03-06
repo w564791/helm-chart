@@ -1,0 +1,38 @@
+# Default values for flink-template.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+flinkVersion: ""
+job:
+  parallelism: 1
+  upgradeMode: stateless
+  jarURI: local:///opt/flink/examples/streaming/StateMachineExample.jarb
+taskmanager:
+  numberOfTaskSlots: ""
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "ccc"
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: "flink"
+
+
+
+service:
+  type: ClusterIP
+  port: 10240
+
+ingress:
+  enabled: true
+  className: ""
+  annotations: {}
+
+
